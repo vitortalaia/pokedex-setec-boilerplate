@@ -28,3 +28,5 @@ class Spinner {
 export default ($element) => {
   new Spinner($element).init();
 };
+
+export { Spinner };
