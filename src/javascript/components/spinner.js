@@ -5,6 +5,7 @@ class Spinner {
   constructor(element) {
     this.$element = element;
     this.spinnerVisibleClass = 'spinner--visible';
+    this.$element.data('spinner', this);
   }
 
   init() {
@@ -25,6 +26,7 @@ class Spinner {
   }
 }
 
+/* istanbul ignore next */
 export default ($element) => {
   new Spinner($element).init();
 };
