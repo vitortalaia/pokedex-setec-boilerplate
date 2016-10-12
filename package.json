@@ -8,7 +8,8 @@
     "test:watch": "karma start",
     "lint": "eslint src/javascript/**/*.js",
     "start": "gulp",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "deploy": "gulp deploy"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "eslint-plugin-import": "^1.16.0",
     "events": "^1.1.1",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^3.0.3",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
