@@ -27,7 +27,7 @@ class Pokemon {
 
   releasePokemon() {
     const options = this.options;
-    const message = `${options.releaseText} ${options.pokemonName}?`;
+    const message = `${options.pokemonReleaseText} ${options.pokemonName}?`;
 
     // eslint-disable-next-line no-alert
     if (window.confirm(message)) {
