@@ -5,6 +5,7 @@ gulp.task('webserver', require('./tasks/webserver'));
 gulp.task('sass', require('./tasks/sass'));
 gulp.task('copy-index', require('./tasks/copy-index'));
 gulp.task('images', require('./tasks/images'));
+gulp.task('gh-pages', require('./tasks/gh-pages'));
 
 const scripts = gulp.parallel('webpack');
 const styles = gulp.parallel('sass');
@@ -21,5 +22,7 @@ gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.scss', styles);
   gulp.watch('./src/index.html', index);
 });
+
+gulp.task('deploy', gulp.series('build', 'gh-pages'));
 
 gulp.task('default', gulp.series('build', 'webserver', 'watch'));
