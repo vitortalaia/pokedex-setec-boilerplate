@@ -15,6 +15,8 @@ module.exports = (config) => {
       'spec/entry.js': ['webpack'],
     },
 
+    webpackMiddleware: { noInfo: true },
+
     webpack: {
       devtool: 'inline-source-map',
 
