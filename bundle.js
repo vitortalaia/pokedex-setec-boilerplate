@@ -12141,7 +12141,7 @@
 	    key: 'releasePokemon',
 	    value: function releasePokemon() {
 	      var options = this.options;
-	      var message = options.releaseText + ' ' + options.pokemonName + '?';
+	      var message = options.pokemonReleaseText + ' ' + options.pokemonName + '?';
 
 	      // eslint-disable-next-line no-alert
 	      if (window.confirm(message)) {
