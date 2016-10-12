@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import emitter from 'js/emitter';
+import componentLoader from 'js/component-loader';
 import errorTemplate from 'js/templates/error.hbs';
 import entryTemplate from 'js/templates/pokedex-entry.hbs';
 
@@ -28,13 +29,19 @@ class Pokedex {
   onFetchPokemonSuccess(pokemon) {
     emitter.emit('spinner:hide');
 
-    this.$element.html(this.renderPokemonEntries(pokemon));
+    this.insertPokedexEntries(pokemon);
   }
 
   onFetchPokemonFailure() {
     emitter.emit('spinner:hide');
 
     this.$element.html(this.renderErrorTemplate());
+  }
+
+  insertPokedexEntries(pokemon) {
+    this.$element.html(this.renderPokemonEntries(pokemon));
+
+    componentLoader(this.$element.find('[data-component]'));
   }
 
   // eslint-disable-next-line class-methods-use-this
